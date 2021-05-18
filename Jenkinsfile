@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo 'Testing..'
 		sh 'mvn test'
-		sh 'mvn test sonar:sonar -Dsonar.host.url=http://3.236.68.136:9000 -Dsonar.login=a011d844ea25fc3dc7cada2dd33a47e1fed8e403'    
+		sh 'mvn sonar:sonar -Dsonar.host.url=http://3.236.232.226:9000 -Dsonar.login=3ba908ff5067f1d33c21bb7c80d94225751a022a'    
             }
         }
         stage('Deploy') {
