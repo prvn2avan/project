@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Validate') {
             steps {
-                echo 'validating..'
+                echo 'validating1..'
 		sh 'mvn compile'
             }
         }
