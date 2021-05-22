@@ -12,13 +12,13 @@ pipeline {
             steps {
                 echo 'Testing..'
 		sh 'mvn test'
-		sh 'mvn sonar:sonar -Dsonar.host.url=http://3.234.236.218:9000 -Dsonar.login=3ba908ff5067f1d33c21bb7c80d94225751a022a'    
+		sh 'mvn sonar:sonar -Dsonar.host.url=http://3.238.87.228:9000 -Dsonar.login=5dd0b4d2b811920003922fa2875e068134af4a15'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-		deploy adapters: [tomcat7(credentialsId: 'tomcat', path: '', url: 'http://34.227.148.234:8080/:8080')], contextPath: 'calculate', onFailure: false, war: '**/*.war'            
+		deploy adapters: [tomcat7(credentialsId: 'deploy', path: '', url: 'http://35.172.203.253:9090/')], contextPath: 'calculator', onFailure: false, war: '**/*.war'
 	    }
         }
     }
