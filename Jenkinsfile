@@ -21,6 +21,7 @@ pipeline {
 		sh 'mvn package'
 		sh 'mvn deploy'
 		deploy adapters: [tomcat7(credentialsId: 'deploy', path: '', url: 'http://35.172.203.253:9090/')], contextPath: 'calculator', onFailure: false, war: '**/*.war'
+		sh 'cp /var/lib/jenkins/workspace/project1pipe/target/*.war ~'
 	    }
         }
     }
